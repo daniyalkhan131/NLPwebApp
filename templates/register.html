@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NLP APP | Register Page</title>
+</head>
+<body>
+
+    <h1>NLP App</h1>
+
+    <h3>Register Here</h3>
+
+    {% if message %}
+        <p style="color:red">{{ message }}</p>
+    {% endif %}
+
+    <form action="/perform_registration" method="post"> <!--when user click on submit button then perform_registration
+    page got open, as when we do action on html another page is opened that on server do the task
+
+    and used post as password is there for data sending to server-->
+        <label>Name</label><br>
+        <input type="text" name="user_ka_name" required><br>
+        <!-- and we use name so that no confusion at server side that which data is for what-->
+        <label>Email</label><br>
+        <input type="email" name="user_ka_email" required><br>
+        <label>Password</label><br>
+        <input type="password" name="user_ka_password" required><br><br><!--required is for essential entries-->
+        <input type="submit" value="Register">
+    </form>
+
+    <p>Already a member? <a href="/">Login Here</a></p>
+
+</body>
+</html>
